@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For You 💜</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:18px;background:#100d18;color:#f8f3ff;font-family:Arial,sans-serif;min-height:100vh}
+main{max-width:480px;margin:18px auto;background:#1c1728;border:1px solid #493365;border-radius:24px;padding:24px 18px;text-align:center;box-shadow:0 10px 35px #0007}
+.tag{color:#c7a7ff;font-size:11px;letter-spacing:2px}
+h1{font-size:34px;color:#d9c1ff;margin:15px 0 8px}
+h2{color:#d9c1ff}
+.sub{font-size:18px;color:#fff}
+p{line-height:1.6;color:#ded5e9}
+.gift{font-size:58px;margin:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:22px 0}
+button{font-size:15px;font-weight:bold;cursor:pointer}
+.tile{border:1px solid #674b8c;background:#292039;color:#f4eaff;border-radius:16px;padding:18px 8px;min-height:112px}
+.tile span{display:block;font-size:28px;margin-bottom:8px}
+.tile small{display:block;color:#c4a9e8;margin-top:7px}
+.tile:active,.primary:active{transform:scale(.98)}
+.message{display:none;text-align:left;background:#292039;border:1px solid #674b8c;border-radius:14px;padding:14px;margin:10px 0;line-height:1.6}
+.message.show{display:block}
+.primary{width:100%;border:0;border-radius:30px;padding:14px;background:#9b70d2;color:white;margin-top:10px}
+.primary:disabled{opacity:.4}
+#last{display:none;background:#302342;border-radius:18px;padding:18px;margin-top:18px;line-height:1.7}
+#last.show{display:block}
+footer{font-size:12px;color:#aa96bf;margin-top:20px}
+</style>
+</head>
+<body>
+<main>
+<div class="tag">A SMALL SURPRISE FOR YOU</div>
+<div class="gift">🎁</div>
+<h1>A Little Gift For You 💜</h1>
+<div class="sub">Sorry, My Favourite Human 🥺</div>
+<p>Hey you! I made this just for you. Open all four little surprises. No skipping! 😄</p>
+
+<div class="grid">
+<button class="tile" onclick="openGift(0)"><span>🌟</span>A reminder<small id="s0">Tap to open</small></button>
+<button class="tile" onclick="openGift(1)"><span>💌</span>An apology<small id="s1">Tap to open</small></button>
+<button class="tile" onclick="openGift(2)"><span>😂</span>A smile<small id="s2">Tap to open</small></button>
+<button class="tile" onclick="openGift(3)"><span>🤝</span>A promise<small id="s3">Tap to open</small></button>
+</div>
+
+<div id="m0" class="message"><b>🌟 A reminder</b><br>Your friendship matters to me. Even when we don't talk, I still appreciate the good moments we've shared.</div>
+<div id="m1" class="message"><b>💌 An apology</b><br>I'm genuinely sorry I missed your call. I didn't mean to make you feel ignored. I should have let you know.</div>
+<div id="m2" class="message"><b>😂 A smile</b><br>Official announcement: You're allowed to be annoyed, but you're not allowed to forget how awesome our friendship is. 😄</div>
+<div id="m3" class="message"><b>🤝 A promise</b><br>I'll try to communicate better next time. I hope we can talk honestly whenever something bothers us.</div>
+
+<button id="finish" class="primary" onclick="showFinal()" disabled>Open the final surprise 💜</button>
+<div id="last">
+<div style="font-size:38px">🥹💜</div>
+<h2>Still Angry? 😂❤️</h2>
+I really am sorry I missed your call. I care about our friendship, and I hope this little surprise makes you smile. No pressure to reply immediately. Whenever you're ready, let's talk.
+<p><b>From your friend 💜</b></p>
+</div>
+<footer>Made with care • One small gift, just for you</footer>
+</main>
+<script>
+var opened=[false,false,false,false];
+function openGift(n){
+ document.getElementById('m'+n).className='message show';
+ document.getElementById('s'+n).textContent='Opened ✓';
+ opened[n]=true;
+ document.getElementById('finish').disabled=!opened.every(Boolean);
+}
+function showFinal(){
+ document.getElementById('last').className='show';
+}
+</script>
+</body>
+</html>
