@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Little Surprise 💜</title>
+<style>
+body {
+  background: #21132f;
+  color: white;
+  text-align: center;
+  font-family: Arial;
+  padding: 40px 15px;
+}
+.card {
+  background: #39234e;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+button {
+  background: #d68bff;
+  color: #21132f;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 20px;
+  font-size: 17px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>Hey, You! 💜</h1>
+<h2>A Little Surprise For You 🎁</h2>
+<p>Some friendships are special, and yours is one of them!</p>
+
+<button onclick="showGift()">Open Your Gift 💌</button>
+
+<p id="gift"></p>
+</div>
+
+<script>
+function showGift() {
+ document.getElementById("gift").innerHTML =
+ "Thank you for being a special friend! Never forget how valuable you are. 💜✨";
+}
+</script>
+
+</body>
+</html>
